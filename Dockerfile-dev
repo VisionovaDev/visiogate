@@ -1,0 +1,38 @@
+# Use the official PHP image with Nginx and PHP-FPM
+FROM php:8.3-fpm
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    nginx \
+    mariadb-client \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip \
+    curl \
+    unzip \
+    nodejs \
+    npm
+
+# Install PHP extensions
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd 
+
+# Install PECL extensions and enable them
+RUN pecl install xdebug-3.3.0 \
+    && docker-php-ext-enable xdebug
+
+RUN chown -R www-data:www-data /var/www
+RUN chmod -R 755 /var/www
+
+# Install Composer
+COPY --from=composer:2.7.2 /usr/bin/composer /usr/bin/composer
+
+# Set the working directory
+WORKDIR /var/www/
+
+
+# Start Nginx and PHP-FPM services
+CMD service nginx start && php-fpm
+
+
+
