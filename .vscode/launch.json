@@ -40,7 +40,7 @@
             "request": "launch",
             "port": 9003,
             "pathMappings": {
-                "/var/www/html/": "${workspaceFolder}/local-volumes/nginx/www"
+                "/var/www/": "${workspaceFolder}/local-volumes/nginx/www"
             }
         }
     ]

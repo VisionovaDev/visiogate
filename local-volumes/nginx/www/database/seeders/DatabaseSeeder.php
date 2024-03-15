@@ -5,6 +5,9 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Database\Seeders\SediSeeder;
+use Database\Seeders\VarchiSeeder;
+use Database\Seeders\AziendaSeeder;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
@@ -34,5 +37,13 @@ class DatabaseSeeder extends Seeder
         } else {
             $this->command->info('Admin user already exists.');
         }
+        //crea l'azienda di default
+        $this->call([AziendaSeeder::class]);
+
+        //crea la sede di default
+        $this->call([SediSeeder::class]);
+
+        //crea il varco di default
+        $this->call([VarchiSeeder::class]);
     }
 }
