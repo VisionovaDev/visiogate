@@ -5,9 +5,7 @@ namespace Database\Seeders;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Database\Seeders\SediSeeder;
-use Database\Seeders\VarchiSeeder;
-use Database\Seeders\AziendaSeeder;
+
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
@@ -45,5 +43,14 @@ class DatabaseSeeder extends Seeder
 
         //crea il varco di default
         $this->call([VarchiSeeder::class]);
+
+        //crea i badges di default
+        $this->call([BadgeSeeder::class]);
+
+        //crea i reparti di default
+        $this->call([RepartoSeeder::class]);
+
+        //crea il modello di registrazione di default
+        $this->call([ModelliRegistrazioneSeeder::class]);
     }
 }

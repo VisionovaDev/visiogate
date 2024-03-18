@@ -22,9 +22,7 @@ class SediSeeder extends Seeder
                 'citta' => 'Brescia',
                 'cap' => '25125',
                 'provincia' => 'BS',
-                'nazione' => 'Italia',
-                'sito' => 'https://www.nomedelsito.it',
-                'email' => 'email@emaildaimpostare.ko',
+                'nazione' => 'Italia',               
                 'telefono' => '0000000',                
             ]);
             $this->command->info('Sede di default creata');

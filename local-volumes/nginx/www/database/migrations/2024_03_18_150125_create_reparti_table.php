@@ -11,15 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('varchi', function (Blueprint $table) {
+        Schema::create('reparti', function (Blueprint $table) {
             $table->id();
             $table->foreignId('sedi_id')->constrained('sedi')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('nome');           
-            $table->boolean('is_ingresso')->default(true);
-            $table->boolean('is_uscita')->default(true);
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
-            $table->softDeletes();
+            $table->string('nome_it');
+            $table->string('nome_en');
+            $table->string('nome_de');
+            $table->string('nome_fr');
+            $table->string('nome_es');               
+            $table->timestamps();
+            $table->softDeletes(); // Supporto per il soft delete
         });
     }
 
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('varchi');
+        Schema::dropIfExists('reparti');
     }
 };

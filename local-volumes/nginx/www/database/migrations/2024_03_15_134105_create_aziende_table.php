@@ -29,7 +29,7 @@ return new class extends Migration
             $table->string('privacy_es')->nullable();
             $table->string('logo_file_path')->nullable();
             $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
+            $table->timestamp('updated_at')->useCurrentOnUpdate()->useCurrentOnUpdate();
         });
     }
 

@@ -10,6 +10,7 @@ use \App\Models\Varchi;
 class Sedi extends Model
 {
     use HasFactory,SoftDeletes;
+    
     protected $table = 'sedi';
 
     protected $fillable = [
