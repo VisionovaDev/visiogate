@@ -2,4 +2,4 @@ mariadb_data/
 local-volumes/mariadb/
 local-volumes/nginx/logs
 .env
-db-backup/
+db_dump/
