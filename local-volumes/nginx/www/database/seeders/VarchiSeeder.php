@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Varchi;
+use App\Models\Varco;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -14,9 +14,9 @@ class VarchiSeeder extends Seeder
     public function run(): void
     {
       //inserisce il varco di default
-      $varchiExists = Varchi::where('id', 1)->exists();
+      $varchiExists = Varco::where('id', 1)->exists();
       if (!$varchiExists) {
-        Varchi::create([
+        Varco::create([
               'nome' => 'Ingresso principale',
               'sedi_id' => 1,
               'is_ingresso' => 1,

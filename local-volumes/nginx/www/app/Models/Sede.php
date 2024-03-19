@@ -3,20 +3,25 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use \App\Models\Varchi;
 
-class Varchi extends Model
+class Sede extends Model
 {
-    use HasFactory, Notifiable, SoftDeletes;
-    protected $table = 'varchi';
+    use HasFactory,SoftDeletes;
+    
+    protected $table = 'sedi';
 
     protected $fillable = [
         'nome',
-        'sedi_id',
-        'is_ingresso',
-        'is_uscita'
+        'indirizzo',
+	    'citta', 
+	    'provincia',
+	    'nazione',
+	    'sito',
+	    'email',
+	    'telefono'  
     ];
 
     /**
@@ -33,8 +38,9 @@ class Varchi extends Model
         ];
     }
 
-    public function sede()
+    public function varchi()
     {
-        return $this->belongsTo(Sedi::class);
+        return $this->hasMany(Varchi::class);
     }
+
 }

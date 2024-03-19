@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\ModelliRegistrazione;
+use App\Models\ModelloRegistrazione;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class ModelliRegistrazioneSeeder extends Seeder
@@ -14,8 +14,8 @@ class ModelliRegistrazioneSeeder extends Seeder
     public function run(): void
     {
         // Controlla se la tabella è vuota
-        if (ModelliRegistrazione::count() == 0) {
-            ModelliRegistrazione::create([
+        if (ModelloRegistrazione::count() == 0) {
+            ModelloRegistrazione::create([
                 'nome' => 'default',
             ]);
             $this->command->info('Modello di registrazione di default creato');

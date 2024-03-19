@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
+
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -23,23 +23,14 @@ class DatabaseSeeder extends Seeder
         ]);
          fine versione originae */
 
-        $adminDetails = config('visiongate.admin_user');
-        $adminExists = User::where('email', $adminDetails['email'])->exists();
-        if (!$adminExists) {
-            User::create([
-                'name' => $adminDetails['name'],
-                'email' => $adminDetails['email'],
-                'password' => Hash::make($adminDetails['password']),
-            ]);
-            $this->command->info('Admin user created successfully.');
-        } else {
-            $this->command->info('Admin user already exists.');
-        }
+        $this->call([UsersTableSeeder::class]);
+
+       
         //crea l'azienda di default
         $this->call([AziendaSeeder::class]);
 
         //crea la sede di default
-        $this->call([SediSeeder::class]);
+        $this->call([SedeSeeder::class]);
 
         //crea il varco di default
         $this->call([VarchiSeeder::class]);
@@ -52,5 +43,14 @@ class DatabaseSeeder extends Seeder
 
         //crea il modello di registrazione di default
         $this->call([ModelliRegistrazioneSeeder::class]);
+
+        //crea i campi del modello di registrazione di default
+        $this->call([CampiModelliRegistrazioneSeeder::class]);
+        
+        //crea un link per il transito di default
+        $this->call([LinkTransitoSeeder::class]);
+
+        
+
     }
 }
