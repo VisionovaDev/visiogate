@@ -23,7 +23,11 @@
                                         <p>Dati generali dell'azienda</p>
                                     </div>
                                     <div class="col-sm  text-end">
-                                        <button type="button" class="btn btn-success btn-sm">Modifica</button>                                        
+                                        <a href="{{ route('imposta.azienda.edit_dati', ['id' => $azienda->id]) }}">
+                                            <button type="button" class="btn btn-success btn-sm">
+                                                Modifica
+                                            </button>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -40,7 +44,8 @@
                             </p>
                             <p class="card-text border-bottom"><span class="fw-bold">Sito Web:</span> <a
                                     href="{{ $azienda->sito }}" target="_blank">{{ $azienda->sito }}</a></p>
-                            <p class="card-text border-bottom"><span class="fw-bold">Email:</span> {{ $azienda->email }}</p>
+                            <p class="card-text border-bottom"><span class="fw-bold">Email:</span> {{ $azienda->email }}
+                            </p>
                             <p class="card-text border-bottom"><span class="fw-bold">Telefono:</span>
                                 {{ $azienda->telefono }}</p>
                         </div>
@@ -93,7 +98,8 @@
                                                     id="{{ $lang }}-tab" data-bs-toggle="tab"
                                                     data-bs-target="#{{ $lang }}" type="button" role="tab"
                                                     aria-controls="{{ $lang }}"
-                                                    aria-selected="{{ $loop->first ? 'true' : 'false' }}">{{ $label }}</button>
+                                                    aria-selected="{{ $loop->first ? 'true' : 'false' }}"><span
+                                                        class="fi fi-{{ $lang }}"></span>&nbsp;{{ $label }}</button>
                                             </li>
                                         @endforeach
                                     </ul>
@@ -102,7 +108,7 @@
                                             <div class="tab-pane fade{{ $loop->first ? ' show active' : '' }}"
                                                 id="{{ $lang }}" role="tabpanel"
                                                 aria-labelledby="{{ $lang }}-tab">
-                                                
+
                                                 {!! nl2br(e($azienda->{'privacy_' . $lang})) !!}
                                             </div>
                                         @endforeach

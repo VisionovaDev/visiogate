@@ -15,9 +15,10 @@ class AziendaController extends Controller
      }
  
      // Mostra il form per modificare una specifica azienda
-     public function edit($id)
+     public function edit_dati($id)
      {
-         // Qui va la logica per mostrare il form di modifica dell'azienda
+        $azienda=Azienda::first();
+        return view('imposta.azienda_edit_dati',['azienda'=>$azienda]);
      }
  
      // Aggiorna una specifica azienda nel database
