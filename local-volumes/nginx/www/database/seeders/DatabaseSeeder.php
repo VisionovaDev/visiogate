@@ -50,10 +50,11 @@ class DatabaseSeeder extends Seeder
         //crea un link per il transito di default
         $this->call([LinkTransitoSeeder::class]);
 
+        //Inserisce i tipi di transito di default (Entrata e Uscita)
+        $this->call([TipoTransitiSeeder::class]);
+
         //crea i ruoli di default ed assegna il ruolo di Admin all'utente Admin
         $this->call([RolesSeeder::class]);
-
-        
 
     }
 }

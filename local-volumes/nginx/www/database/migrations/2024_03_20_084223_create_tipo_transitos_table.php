@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('registrazioni', function (Blueprint $table) {
+        Schema::create('tipo_transiti', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('modelli_registrazione_id')->constrained('modelli_registrazione')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('codice_badge');              
-            $table->string('lingua');           
+            $table->string('nome');           
+            // Aggiungi altri campi necessari
             $table->timestamps();
             $table->softDeletes();
         });
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('registrazioni');
+        Schema::dropIfExists('tipo_transiti');
     }
 };
