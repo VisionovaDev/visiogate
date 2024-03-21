@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
     <div class="container mt-3 mb-3">
         <h3 class="fw-bold mb-3">Azienda</h3>
@@ -61,13 +62,15 @@
                                         <p>Formato png o jpg dimensioni:300x200</p>
                                     </div>
                                     <div class="col-sm  text-end">
-                                        <button type="button" class="btn btn-success btn-sm">Modifica</button>
+                                        <button type="button" class="btn btn-success btn-sm" data-bs-toggle="modal"
+                                            data-bs-target="#dlg_carica_logo">
+                                            Modifica</button>
                                     </div>
                                 </div>
                             </div>
 
-                            @if ($azienda->logo_file_path)
-                                <img src="{{ asset($azienda->logo_file_path) }}" alt="Logo Azienda" class="img-fluid">
+                            @if ($azienda->LogoFilePath)
+                                <img src="{{ asset($azienda->LogoFilePath) }}" alt="Logo Azienda" class="img-fluid">
                             @endif
                         </div>
                     </div>
@@ -90,7 +93,7 @@
                                                 </button>
                                             </a>
 
-                                            
+
                                         </div>
                                     </div>
                                 </div>
@@ -112,8 +115,7 @@
                                     <div class="tab-content mt-3" id="privacyTabContent">
                                         @foreach (['it', 'en', 'de', 'fr', 'es'] as $lang)
                                             <div class="tab-pane overflow-auto fade{{ $loop->first ? ' show active' : '' }}"
-                                                style="max-height: 500px;"
-                                                id="{{ $lang }}" role="tabpanel"
+                                                style="max-height: 500px;" id="{{ $lang }}" role="tabpanel"
                                                 aria-labelledby="{{ $lang }}-tab">
 
                                                 {!! $azienda->{'privacy_' . $lang} !!}
@@ -132,5 +134,38 @@
         </div>
 
 
+    </div>
+@endsection
+
+{{--  inserisco i dialog a popup --}}
+@section('before_body_close')
+    <!-- Modal -->
+    <div class="modal fade" id="dlg_carica_logo" tabindex="-1" aria-labelledby="dlg_carica_logoModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="dlg_carica_logoModalLabel">Form di Dialogo</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Annulla"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Qui inserisci il tuo form -->
+                    <form action={{ route('imposta.azienda.update_logo', ['id' => $azienda->id]) }} method="POST"
+                        enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+
+                        <div class="mb-3">
+                            <label for="image" class="form-label">Seleziona il logo da inserire</label>
+                            <input type="file" class="form-control" name="image" id="image" accept=".png, .jpg, .jpeg">
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Inserisci Logo</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                </div>
+                </form>
+            </div>
+        </div>
     </div>
 @endsection

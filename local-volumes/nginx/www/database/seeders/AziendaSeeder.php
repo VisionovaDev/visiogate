@@ -16,7 +16,7 @@ class AziendaSeeder extends Seeder
         //inserisce l'azienda di default
         $aziendaExists = Azienda::where('id', 1)->exists();
         if (!$aziendaExists) {
-            Azienda::create([
+            $azienda=Azienda::create([
                 'nome' => 'Ragione sociale',
                 'indirizzo' => 'via ....',
                 'citta' => 'Brescia',
@@ -30,9 +30,11 @@ class AziendaSeeder extends Seeder
                 'privacy_en' => 'La privacy aziendale in inglese',
                 'privacy_de' => 'La privacy aziendale in tedesco',
                 'privacy_fr' => 'La privacy aziendale in francese',
-                'privacy_es' => 'La privacy aziendale in spagnolo',
-                'logo_file_path' => '/storage/images/logo.png'  //In realta con il comando "php artisan storage:link" il file deve andare nella cartella storage\app\public\images"
+                'privacy_es' => 'La privacy aziendale in spagnolo',                
             ]);
+
+            //Aggiungo il logo al mediaLibrary
+            $azienda->addMedia(storage_path('app/public/images/logo.png'))->preservingOriginal()->toMediaCollection();
             $this->command->info('Azienda di default creata');
         } else {
             $this->command->info('Azienda di default già presente');

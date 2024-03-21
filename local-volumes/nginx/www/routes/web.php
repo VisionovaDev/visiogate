@@ -14,19 +14,14 @@ Route::get('/', function () {
 
 // Gruppo di route con prefisso /imposta
 Route::prefix('imposta')->group(function () {
-    // Definisce la route per /imposta/azienda che include solo le operazioni di visualizzazione, modifica e aggiornamento
-    /*
-    Route::resource('azienda', App\Http\Controllers\AziendaController::class)->only([
-        'show', 'edit', 'update'
-    ]);
-    */
-    
+  
     //Gestione Azienda intestataria dell'applicazione
     Route::get('azienda/{id?}', [App\Http\Controllers\AziendaController::class, 'show'])->defaults('id', '1')->name('imposta.azienda.show');
     Route::get('azienda/edit_dati/{id?}', [App\Http\Controllers\AziendaController::class, 'edit_dati'])->defaults('id', '1')->name('imposta.azienda.edit_dati');
     Route::put('azienda/edit_dati/{id?}', [App\Http\Controllers\AziendaController::class, 'update_dati'])->defaults('id', '1')->name('imposta.azienda.update_dati');
     Route::get('azienda/edit_privacy/{id?}', [App\Http\Controllers\AziendaController::class, 'edit_privacy'])->defaults('id', '1')->name('imposta.azienda.edit_privacy');
     Route::put('azienda/edit_privacy/{id?}', [App\Http\Controllers\AziendaController::class, 'update_privacy'])->defaults('id', '1')->name('imposta.azienda.update_privacy');
+    Route::put('azienda/update_logo/{id?}', [App\Http\Controllers\AziendaController::class, 'update_logo'])->defaults('id', '1')->name('imposta.azienda.update_logo');
     
     
 });

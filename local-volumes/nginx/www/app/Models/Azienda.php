@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\MediaLibrary\HasMedia;
 
-
-class Azienda extends Model
+class Azienda extends Model implements HasMedia
 {
-    use HasFactory;
+    use HasFactory,InteractsWithMedia;
     protected $table = 'aziende';
 
     protected $fillable = [
@@ -25,8 +26,7 @@ class Azienda extends Model
 	    'privacy_en',
 	    'privacy_de',
 	    'privacy_fr',
-	    'privacy_es',
-	    'logo_file_path'
+	    'privacy_es'
     ];
 
     /**
@@ -41,5 +41,10 @@ class Azienda extends Model
             'updated_at' => 'datetime',
         ];
     }
-   
+
+    public function getLogoFilePathAttribute()
+    {
+        return $this->getFirstMedia()->getUrl();
+    }
+
 }

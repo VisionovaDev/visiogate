@@ -12,8 +12,14 @@ RUN apt-get update && apt-get install -y \
     curl \
     unzip \
     nodejs \
-    npm
+    npm \
+    jpegoptim \
+    optipng \
+    pngquant \
+    gifsicle \
+    libavif-bin
 
+RUN npm install -g svgo
 # Install PHP extensions
 RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd 
 
