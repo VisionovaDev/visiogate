@@ -16,7 +16,7 @@ class Reparto extends Model
 
     public function sede()
     {
-        return $this->belongsTo(Sedi::class, 'sedi_id');
+        return $this->belongsTo(Sede::class, 'sedi_id');
     }
 
     // Attributo per ottenere il nome della sede

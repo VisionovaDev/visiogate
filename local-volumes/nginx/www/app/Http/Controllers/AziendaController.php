@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Azienda;
-use Illuminate\Http\Request;
 use App\Http\Requests\UpdateAziendaDatiRequest;
 use App\Http\Requests\UpdateAziendaPrivacyRequest;
 

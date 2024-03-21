@@ -111,11 +111,12 @@
                                     </ul>
                                     <div class="tab-content mt-3" id="privacyTabContent">
                                         @foreach (['it', 'en', 'de', 'fr', 'es'] as $lang)
-                                            <div class="tab-pane fade{{ $loop->first ? ' show active' : '' }}"
+                                            <div class="tab-pane overflow-auto fade{{ $loop->first ? ' show active' : '' }}"
+                                                style="max-height: 500px;"
                                                 id="{{ $lang }}" role="tabpanel"
                                                 aria-labelledby="{{ $lang }}-tab">
 
-                                                {!! nl2br(e($azienda->{'privacy_' . $lang})) !!}
+                                                {!! $azienda->{'privacy_' . $lang} !!}
                                             </div>
                                         @endforeach
                                     </div>

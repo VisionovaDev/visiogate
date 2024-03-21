@@ -15,8 +15,11 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    
+    @yield('before_head_close')
 </head>
 <body>
+    @yield('after_body_open')
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -76,5 +79,6 @@
             @yield('content')
         </main>
     </div>
+    @yield('before_body_close')
 </body>
 </html>

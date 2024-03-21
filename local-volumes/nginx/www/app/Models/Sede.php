@@ -40,7 +40,7 @@ class Sede extends Model
 
     public function varchi()
     {
-        return $this->hasMany(Varchi::class);
+        return $this->hasMany(Varco::class);
     }
 
 }

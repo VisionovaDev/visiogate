@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Badge extends Model
 {
-    use SoftDeletes;
+    use HasFactory, SoftDeletes;
 
     protected $fillable = ['numero', 'sede_id'];
 
@@ -16,7 +16,7 @@ class Badge extends Model
 
     public function sede()
     {
-        return $this->belongsTo(Sedi::class, 'sede_id');
+        return $this->belongsTo(Sede::class, 'sede_id');
     }
 
     // Accessor per ottenere il nome della sede

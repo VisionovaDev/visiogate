@@ -18,7 +18,7 @@ class Registrazione extends Model
 
     public function modelloRegistrazione()
     {
-        return $this->belongsTo(ModelliRegistrazione::class, 'modelli_registrazione_id');
+        return $this->belongsTo(ModelloRegistrazione::class, 'modelli_registrazione_id');
     }
 
     public function badge()
