@@ -22,11 +22,11 @@ return new class extends Migration
             $table->string('sito')->nullable();
             $table->string('email')->nullable();
             $table->string('telefono')->nullable();
-            $table->string('privacy_it')->nullable();
-            $table->string('privacy_en')->nullable();
-            $table->string('privacy_de')->nullable();
-            $table->string('privacy_fr')->nullable();
-            $table->string('privacy_es')->nullable();
+            $table->text('privacy_it')->nullable();
+            $table->text('privacy_en')->nullable();
+            $table->text('privacy_de')->nullable();
+            $table->text('privacy_fr')->nullable();
+            $table->text('privacy_es')->nullable();
             $table->string('logo_file_path')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrentOnUpdate()->useCurrentOnUpdate();

@@ -20,8 +20,13 @@ Route::prefix('imposta')->group(function () {
         'show', 'edit', 'update'
     ]);
     */
-    Route::get('azienda/edit_dati/{id?}', [App\Http\Controllers\AziendaController::class, 'edit_dati'])->name('imposta.azienda.edit_dati');
-    Route::get('azienda/{id?}', [App\Http\Controllers\AziendaController::class, 'show'])->name('imposta.azienda.show');
+    
+    //Gestione Azienda intestataria dell'applicazione
+    Route::get('azienda/{id?}', [App\Http\Controllers\AziendaController::class, 'show'])->defaults('id', '1')->name('imposta.azienda.show');
+    Route::get('azienda/edit_dati/{id?}', [App\Http\Controllers\AziendaController::class, 'edit_dati'])->defaults('id', '1')->name('imposta.azienda.edit_dati');
+    Route::put('azienda/edit_dati/{id?}', [App\Http\Controllers\AziendaController::class, 'update_dati'])->defaults('id', '1')->name('imposta.azienda.update_dati');
+    Route::get('azienda/edit_privacy/{id?}', [App\Http\Controllers\AziendaController::class, 'edit_privacy'])->defaults('id', '1')->name('imposta.azienda.edit_privacy');
+    Route::put('azienda/edit_privacy/{id?}', [App\Http\Controllers\AziendaController::class, 'update_privacy'])->defaults('id', '1')->name('imposta.azienda.update_privacy');
     
     
 });

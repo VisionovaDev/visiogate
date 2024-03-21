@@ -84,7 +84,13 @@
                                             <p>Informative privacy dell'azienda</p>
                                         </div>
                                         <div class="col-sm  text-end">
-                                            <button type="button" class="btn btn-success btn-sm">Modifica</button>
+                                            <a href="{{ route('imposta.azienda.edit_privacy', ['id' => $azienda->id]) }}">
+                                                <button type="button" class="btn btn-success btn-sm">
+                                                    Modifica
+                                                </button>
+                                            </a>
+
+                                            
                                         </div>
                                     </div>
                                 </div>
