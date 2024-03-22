@@ -32,9 +32,12 @@ services:
       - ./local-conf/php/xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
       - ./local-conf/php/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini
       - ./local-conf/php/laravel.ini:/usr/local/etc/php/conf.d/local.ini
+      - ./local-conf/npm/npm-startup.sh:/var/www/npm-startup.sh
     expose:
       - 9000
       - 9003 #xdebug
+    ports:
+       - 5173:5173
    
 
   mariadb:
@@ -52,13 +55,13 @@ services:
       - ./local-volumes/mariadb/db:/var/lib/mysql:rw
       #non funziona - ./local-volumes/mariadb/initdb.d:/docker-entrypoint-initdb.d/:ro   
 
-  npm:  
-    image: node:lts
-    working_dir: /var/www/
-    ports:
-      - 5173:5173
-    entrypoint: ["/var/www/npm-startup.sh"]
-    volumes: 
-      - ./local-volumes/nginx/www:/var/www
-      - ./local-conf/npm/npm-startup.sh:/var/www/npm-startup.sh
+  #npm:  
+  #  image: node:lts
+  #  working_dir: /var/www/
+  #  ports:
+  #    - 5173:5173
+  #  entrypoint: ["/var/www/npm-startup.sh"]
+  #  volumes: 
+  #    - ./local-volumes/nginx/www:/var/www
+  #    - ./local-conf/npm/npm-startup.sh:/var/www/npm-startup.sh
   

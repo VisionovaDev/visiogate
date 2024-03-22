@@ -39,12 +39,18 @@ class Azienda extends Model implements HasMedia
         return [
             'created_at' => 'datetime',
             'updated_at' => 'datetime',
+            
         ];
     }
 
     public function getLogoFilePathAttribute()
     {
         return $this->getFirstMedia()->getUrl();
+    }
+
+    public function setProvinciaAttribute($value)
+    {        
+        $this->attributes['provincia'] = strtoupper($value);
     }
 
 }

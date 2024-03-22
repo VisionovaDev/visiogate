@@ -7,7 +7,7 @@
             @csrf
             @method('PUT')
 
-            <div class="form-group mt-3">
+            <div class="form-group mt-3 {{ $errors->has('nome') ? 'has-error' : '' }}">
                 <label for="nome" class="fw-bold">Nome:</label>
                 <input type="text" class="form-control" id="nome" name="nome"
                     value="{{ old('nome', $azienda->nome) }}" required>
@@ -16,7 +16,7 @@
                 @endif
             </div>
 
-            <div class="form-group mt-3">
+            <div class="form-group mt-3 {{ $errors->has('indirizzo') ? 'has-error' : '' }}">
                 <label for="indirizzo" class="fw-bold">Indirizzo:</label>
                 <input type="text" class="form-control" id="indirizzo" name="indirizzo"
                     value="{{ old('indirizzo', $azienda->indirizzo) }}" required>
@@ -25,7 +25,7 @@
                 @endif
             </div>
 
-            <div class="form-group mt-3">
+            <div class="form-group mt-3 {{ $errors->has('citta') ? 'has-error' : '' }}">
                 <label for="citta" class="fw-bold">Citta:</label>
                 <input type="text" class="form-control" id="citta" name="citta"
                     value="{{ old('citta', $azienda->citta) }}" required>
@@ -34,7 +34,7 @@
                 @endif
             </div>
 
-            <div class="form-group mt-3">
+            <div class="form-group mt-3 {{ $errors->has('cap') ? 'has-error' : '' }}">
                 <label for="cap" class="fw-bold">CAP:</label>
                 <input type="text" class="form-control" id="cap" name="cap"
                     value="{{ old('cap', $azienda->cap) }}" required>
@@ -43,7 +43,7 @@
                 @endif
             </div>
 
-            <div class="form-group mt-3">
+            <div class="form-group mt-3 {{ $errors->has('provincia') ? 'has-error' : '' }}">
                 <label for="provincia" class="fw-bold">Provincia:</label>
                 <input type="text" class="form-control" id="provincia" name="provincia" maxlength="2"
                     value="{{ old('provincia', $azienda->provincia) }}" required>
@@ -52,7 +52,7 @@
                 @endif
             </div>
 
-            <div class="form-group mt-3">
+            <div class="form-group mt-3 {{ $errors->has('nazione') ? 'has-error' : '' }}">
                 <label for="nazione" class="fw-bold">Nazione:</label>
                 <input type="text" class="form-control" id="nazione" name="nazione"
                     value="{{ old('nazione', $azienda->nazione) }}" required>
@@ -62,7 +62,7 @@
             </div>
 
 
-            <div class="form-group mt-3">
+            <div class="form-group mt-3 {{ $errors->has('email') ? 'has-error' : '' }}">
                 <label for="email" class="fw-bold">Email</label>
                 <input type="email" class="form-control" id="email" name="email"
                     value="{{ old('email', $azienda->email) }}" required>
@@ -71,7 +71,7 @@
                 @endif
             </div>
 
-            <div class="form-group mt-3">
+            <div class="form-group mt-3 {{ $errors->has('telefono') ? 'has-error' : '' }}">
                 <label for="telefono" class="fw-bold">Telefono</label>
                 <input type="text" class="form-control" id="telefono" name="telefono"
                     value="{{ old('telefono', $azienda->telefono) }}" required>
@@ -80,7 +80,7 @@
                 @endif
             </div>
 
-            <div class="form-group mt-3">
+            <div class="form-group mt-3 {{ $errors->has('sito') ? 'has-error' : '' }}">
                 <label for="sito" class="fw-bold">Sito Web</label>
                 <input type="url" class="form-control" id="sito" name="sito"
                     value="{{ old('sito', $azienda->sito) }}" required>
@@ -92,7 +92,7 @@
             <!-- Aggiungi qui gli altri campi del form seguendo lo stesso schema -->
             <div class="mt-3">
                 <button type="submit" class="btn btn-primary">Salva</button>
-                <a href="{{ route('imposta.azienda.show', ['id' => $azienda->id]) }}">
+                <a href="{{ route('imposta.azienda.show', ['id' => $id_azienda] }}">
                     <button type="button" class="btn btn-secondary">Annulla</button>
                 </a>
             </div>

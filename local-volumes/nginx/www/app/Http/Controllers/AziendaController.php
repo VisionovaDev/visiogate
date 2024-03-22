@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Sede;
 use App\Models\Azienda;
 use App\Http\Requests\UpdateAziendaDatiRequest;
 use App\Http\Requests\UpdateAziendaLogoRequest;
@@ -13,7 +14,8 @@ class AziendaController extends Controller
    public function show($id)
    {
       $azienda = Azienda::first();
-      return view('imposta.azienda_show', ['azienda' => $azienda]);
+      $sedi=Sede::all();
+      return view('imposta.azienda_show', ['azienda' => $azienda, 'sedi'=> $sedi]);
    }
 
    // Mostra il form per modificare una specifica azienda

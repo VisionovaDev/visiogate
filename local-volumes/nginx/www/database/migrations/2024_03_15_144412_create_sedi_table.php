@@ -36,7 +36,7 @@ return new class extends Migration
             $table->string('regolamento_fr')->nullable();
             $table->string('regolamento_es')->nullable();
             $table->boolean('is_email_entrata_abilitata')->default(false);
-            $table->boolean('is_email_entrata_uscita')->default(false);
+            $table->boolean('is_email_uscita_abilitata')->default(false);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
             $table->softDeletes();

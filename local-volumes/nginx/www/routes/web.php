@@ -22,6 +22,14 @@ Route::prefix('imposta')->group(function () {
     Route::get('azienda/edit_privacy/{id?}', [App\Http\Controllers\AziendaController::class, 'edit_privacy'])->defaults('id', '1')->name('imposta.azienda.edit_privacy');
     Route::put('azienda/edit_privacy/{id?}', [App\Http\Controllers\AziendaController::class, 'update_privacy'])->defaults('id', '1')->name('imposta.azienda.update_privacy');
     Route::put('azienda/update_logo/{id?}', [App\Http\Controllers\AziendaController::class, 'update_logo'])->defaults('id', '1')->name('imposta.azienda.update_logo');
+
+    //Gestione Sedi
+    Route::get('sede/edit/{id?}', [App\Http\Controllers\SedeController::class, 'edit'])->defaults('id', '1')->name('imposta.sede.edit');
+    Route::put('sede/update/{id?}', [App\Http\Controllers\SedeController::class, 'update'])->name('imposta.sede.update');
+    Route::get('sede/add/', [App\Http\Controllers\SedeController::class, 'add'])->name('imposta.sede.add');
+    Route::post('sede/store/', [App\Http\Controllers\SedeController::class, 'store'])->name('imposta.sede.store');
+    Route::delete('sede/delete/{id?}', [App\Http\Controllers\SedeController::class, 'delete'])->name('imposta.sede.delete');
+    
     
     
 });

@@ -9,19 +9,35 @@ use \App\Models\Varchi;
 
 class Sede extends Model
 {
-    use HasFactory,SoftDeletes;
-    
+    use HasFactory, SoftDeletes;
+
     protected $table = 'sedi';
 
     protected $fillable = [
         'nome',
         'indirizzo',
-	    'citta', 
-	    'provincia',
-	    'nazione',
-	    'sito',
-	    'email',
-	    'telefono'  
+        'citta',
+        'cap',
+        'provincia',
+        'nazione',
+        'telefono',
+        'msg_email_entrata_it',
+        'msg_email_entrata_en',
+        'msg_email_entrata_de',
+        'msg_email_entrata_fr',
+        'msg_email_entrata_es',
+        'msg_email_uscita_it',
+        'msg_email_uscita_en',
+        'msg_email_uscita_de',
+        'msg_email_uscita_fr',
+        'msg_email_uscita_es',
+        'regolamento_it',
+        'regolamento_en',
+        'regolamento_de',
+        'regolamento_fr',
+        'regolamento_es',
+        'is_email_entrata_abilitata',
+        'is_email_uscita_abilitata'
     ];
 
     /**
@@ -43,4 +59,9 @@ class Sede extends Model
         return $this->hasMany(Varco::class);
     }
 
+
+    public function setProvinciaAttribute($value)
+    {
+        $this->attributes['provincia'] = strtoupper($value);
+    }
 }
