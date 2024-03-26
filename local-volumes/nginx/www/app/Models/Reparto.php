@@ -12,11 +12,11 @@ class Reparto extends Model
 
     protected $table = 'reparti';
 
-    protected $fillable = ['nome_it', 'nome_en','nome_de', 'nome_fr', 'nome_es',  'sedi_id'];
+    protected $fillable = ['nome_it', 'nome_en','nome_de', 'nome_fr', 'nome_es',  'sede_id'];
 
     public function sede()
     {
-        return $this->belongsTo(Sede::class, 'sedi_id');
+        return $this->belongsTo(Sede::class, 'sede_id');
     }
 
     // Attributo per ottenere il nome della sede

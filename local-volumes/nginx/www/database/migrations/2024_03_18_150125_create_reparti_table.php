@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('reparti', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('sedi_id')->constrained('sedi')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('sede_id')->constrained('sedi')->onUpdate('cascade')->onDelete('cascade');
             $table->string('nome_it');
             $table->string('nome_en');
             $table->string('nome_de');

@@ -13,7 +13,7 @@ class LinkTransito extends Model
 
     protected $table='link_transiti';
     
-    protected $fillable = ['varchi_id', 'codice', 'abilitato'];
+    protected $fillable = ['varco_id', 'codice', 'is_abilitato'];
 
     protected static function boot()
     {
@@ -22,7 +22,7 @@ class LinkTransito extends Model
         static::saving(function ($link) {
             // Assegna un codice casuale se il campo 'codice' è vuoto
             if (empty($link->codice)) {
-                $link->codice = Str::random(5);
+                $link->codice = Str::random(6);
             }
         });
     }
@@ -31,7 +31,7 @@ class LinkTransito extends Model
     public function getLinkCompletoAttribute()
     {
         // Ricava l'URL del sito dal file di configurazione di Laravel
-        $baseUrl = config('app.site_url');
+        $baseUrl = config('app.url');
         return $baseUrl . '/transito/inizia/' . $this->codice;
     }
 }

@@ -13,9 +13,9 @@ class Transito extends Model
     protected $table="transiti";
 
     protected $fillable = [
-        'varchi_id', 
-        'link_transiti_id', 
-        'registrazioni_id', 
+        'varco_id', 
+        'link_transito_id', 
+        'registrazione_id', 
         'is_ingresso', 
         'is_uscita', 
         'abilitato'

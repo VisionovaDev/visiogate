@@ -18,7 +18,7 @@ class SedeSeeder extends Seeder
         if (!$sediExists) {
             Sede::create([
                 'nome' => 'Sede unica',
-                'indirizzo' => 'via ....',
+                'indirizzo' => 'via da impostare....',
                 'citta' => 'Brescia',
                 'cap' => '25125',
                 'provincia' => 'BS',

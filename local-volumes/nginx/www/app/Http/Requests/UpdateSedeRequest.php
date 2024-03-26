@@ -31,17 +31,30 @@ class UpdateSedeRequest extends FormRequest
             'nazione' => 'required|string|max:255',
             'telefono' => 'required|string|max:20',
             
+            'oggetto_email_entrata_it' => 'nullable|string',
+            'oggetto_email_entrata_en' => 'nullable|string',
+            'oggetto_email_entrata_de' => 'nullable|string',
+            'oggetto_email_entrata_fr' => 'nullable|string',
+            'oggetto_email_entrata_es' => 'nullable|string',
+
             'msg_email_entrata_it' => 'nullable|string',
             'msg_email_entrata_en' => 'nullable|string',
             'msg_email_entrata_de' => 'nullable|string',
             'msg_email_entrata_fr' => 'nullable|string',
             'msg_email_entrata_es' => 'nullable|string',
           
+            'oggetto_email_uscita_it' => 'nullable|string',
+            'oggetto_email_uscita_en' => 'nullable|string',
+            'oggetto_email_uscita_de' => 'nullable|string',
+            'oggetto_email_uscita_fr' => 'nullable|string',
+            'oggetto_email_uscita_es' => 'nullable|string',
+ 
             'msg_email_uscita_it' => 'nullable|string',
             'msg_email_uscita_en' => 'nullable|string',
             'msg_email_uscita_de' => 'nullable|string',
             'msg_email_uscita_fr' => 'nullable|string',
             'msg_email_uscita_es' => 'nullable|string',
+
           
             'regolamento_it' => 'nullable|string',
             'regolamento_en' => 'nullable|string',

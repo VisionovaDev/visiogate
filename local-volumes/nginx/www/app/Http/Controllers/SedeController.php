@@ -12,14 +12,7 @@ use App\Http\Requests\UpdateAziendaPrivacyRequest;
 
 class SedeController  extends Controller
 {
-   // Mostra una specifica azienda
-/*
-   public function show($id)
-   {
-      $azienda = Azienda::first();
-      return view('imposta.azienda_show', ['azienda' => $azienda]);
-   }
-*/
+
    // Mostra il form per modificare una specifica azienda
    public function edit($id)
    {
@@ -46,7 +39,7 @@ class SedeController  extends Controller
       $validatedData = $request->validated();   
       $sede = Sede::findOrFail($id); 
       $sede->update($validatedData);
-      return redirect()->route('imposta.azienda.show')->with('success', 'Sede aggiunta con successo');
+      return redirect()->route('imposta.sede.show',$id)->with('success', 'Sede agiornata con successo');
    }
 
    public function delete($id)
@@ -57,4 +50,11 @@ class SedeController  extends Controller
    }
 
    
+    // Mostra una specifica azienda
+    public function show($id)
+    {
+       $sede = Sede::findOrFail($id);
+       return view('imposta.sede_show', ['sede'=> $sede]);
+    }
+ 
 }

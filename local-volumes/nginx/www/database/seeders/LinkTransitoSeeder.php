@@ -17,9 +17,9 @@ class LinkTransitoSeeder extends Seeder
         // Controlla se la tabella è vuota
         if (LinkTransito::count() == 0) {
             LinkTransito::create([
-                'varchi_id' => 1, // Assumendo che il varco con id=1 esista
-                'codice' => Str::random(5), // Genera una stringa casuale di 5 caratteri
-                'abilitato' => 1, // Imposta il campo abilitato a 1
+                'varco_id' => 1, // Assumendo che il varco con id=1 esista
+                'codice' => Str::random(6), // Genera una stringa casuale di 5 caratteri
+                'is_abilitato' => 1, // Imposta il campo abilitato a 1
             ]);
             $this->command->info('Link di transito di default creato');
         }

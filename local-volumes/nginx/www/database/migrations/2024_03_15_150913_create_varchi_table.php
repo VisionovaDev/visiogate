@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('varchi', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('sedi_id')->constrained('sedi')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('sede_id')->constrained('sedi')->onUpdate('cascade')->onDelete('cascade');
             $table->string('nome');           
-            $table->boolean('is_ingresso')->default(true);
+            $table->boolean('is_entrata')->default(true);
             $table->boolean('is_uscita')->default(true);
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();

@@ -11,7 +11,7 @@ class RepartoSeeder extends Seeder
     {
         $reparti = [
             [
-                'sedi_id' => 1,
+                'sede_id' => 1,
                 'nome_it' => 'Direzione',
                 'nome_en' => 'Management',
                 'nome_de' => 'Geschäftsleitung',
@@ -19,7 +19,7 @@ class RepartoSeeder extends Seeder
                 'nome_es' => 'Dirección',
             ],
             [
-                'sedi_id' => 1,
+                'sede_id' => 1,
                 'nome_it' => 'Ufficio commerciale',
                 'nome_en' => 'Commercial office',
                 'nome_de' => 'Handelsbüro',
@@ -27,7 +27,7 @@ class RepartoSeeder extends Seeder
                 'nome_es' => 'Oficina comercial',
             ],
             [
-                'sedi_id' => 1,
+                'sede_id' => 1,
                 'nome_it' => 'Produzione',
                 'nome_en' => 'Production',
                 'nome_de' => 'Produktion',
@@ -35,7 +35,7 @@ class RepartoSeeder extends Seeder
                 'nome_es' => 'Producción',
             ],
             [
-                'sedi_id' => 1,
+                'sede_id' => 1,
                 'nome_it' => 'Ufficio tecnico',
                 'nome_en' => 'Technical Office',
                 'nome_de' => 'Technisches Büro',
@@ -43,7 +43,7 @@ class RepartoSeeder extends Seeder
                 'nome_es' => 'Oficina técnica',
             ],
             [
-                'sedi_id' => 1,
+                'sede_id' => 1,
                 'nome_it' => 'Amministrazione',
                 'nome_en' => 'Administration',
                 'nome_de' => 'Verwaltung',

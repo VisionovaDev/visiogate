@@ -14,6 +14,9 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
+
+    <script src="https://unpkg.com/htmx.org"></script>
+    
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     
     @yield('before_head_close')

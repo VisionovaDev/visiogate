@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('link_transiti', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('varchi_id')->constrained('varchi')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('varco_id')->constrained('varchi')->onUpdate('cascade')->onDelete('cascade');
             $table->string('codice');
-            $table->boolean('abilitato')->default(true);           
+            $table->boolean('is_abilitato')->default(true);           
             $table->timestamps();
             $table->softDeletes();
         });

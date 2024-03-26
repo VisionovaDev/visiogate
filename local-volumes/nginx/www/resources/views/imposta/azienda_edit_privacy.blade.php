@@ -75,8 +75,8 @@
 
             @foreach (['it' => 'Italiano', 'en' => 'Inglese', 'de' => 'Tedesco', 'fr' => 'Francese', 'es' => 'Spagnolo'] as $lang => $label)
                 <div class="form-group mt-3">
-                    <label for="privacy_{{ $lang }}" class="fw-bold"><span
-                            class="fi fi-{{ $lang }}"></span>&nbsp; {{ $label }}:</label>
+                    <label for="privacy_{{ $lang }}" class="fw-bold"><i
+                            class="fi fi-{{ $lang }}"></i>&nbsp; {{ $label }}:</label>
                     <textarea rows=10 class="form-control" id="privacy_{{ $lang }}" name="privacy_{{ $lang }}" required>
                         {{ old('privacy_' . $lang, $azienda->{'privacy_' . $lang}) }}
                     </textarea>
@@ -91,6 +91,7 @@
                 <a href="{{ route('imposta.azienda.update_privacy', ['id' => $azienda->id]) }}">
                     <button type="submit" class="btn btn-primary">Salva</button>
                 </a>
+                
                 <a href="{{ route('imposta.azienda.show', ['id' => $azienda->id]) }}">
                     <button type="button" class="btn btn-secondary">Annulla</button>
                 </a>

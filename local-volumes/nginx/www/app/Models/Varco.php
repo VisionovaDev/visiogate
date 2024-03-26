@@ -14,8 +14,8 @@ class Varco extends Model
 
     protected $fillable = [
         'nome',
-        'sedi_id',
-        'is_ingresso',
+        'sede_id',
+        'is_entrata',
         'is_uscita'
     ];
 
@@ -36,5 +36,10 @@ class Varco extends Model
     public function sede()
     {
         return $this->belongsTo(Sede::class);
+    }
+
+    public function links()
+    {
+        return $this->hasMany(LinkTransito::class);
     }
 }

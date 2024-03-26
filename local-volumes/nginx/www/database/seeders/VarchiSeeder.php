@@ -18,8 +18,8 @@ class VarchiSeeder extends Seeder
       if (!$varchiExists) {
         Varco::create([
               'nome' => 'Ingresso principale',
-              'sedi_id' => 1,
-              'is_ingresso' => 1,
+              'sede_id' => 1,
+              'is_entrata' => 1,
               'is_uscita' => 1                            
           ]);
           $this->command->info('Varco di default creato');
