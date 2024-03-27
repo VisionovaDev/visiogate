@@ -28,7 +28,7 @@
     @yield('after_body_open')
     <div class="d-flex" id="wrapper">
         <!-- Sidebar-->
-        <div class="border-end bg-white" id="sidebar-wrapper">
+        <div class="d-flex flex-column border-end bg-white" id="sidebar-wrapper">
             <div class="sidebar-heading border-bottom bg-light">{{ config('app.name', 'VisionGate') }}</div>
             <div class="list-group list-group-flush">
                 <a href="#visitatoriSubmenu" data-bs-toggle="collapse"
@@ -55,13 +55,19 @@
                     <a href="{{ route('imposta.reparto.list') }}"
                         class="list-group-item list-group-item-action list-group-item-light p-3"><i
                             class="bi bi-layout-text-sidebar-reverse"></i> Reparti</a>
-                    <a href="{{ route('imposta.persona.list') }}" class="list-group-item list-group-item-action list-group-item-light p-3"><i
+                    <a href="{{ route('imposta.persona.list') }}"
+                        class="list-group-item list-group-item-action list-group-item-light p-3"><i
                             class="bi bi-person-lines-fill"></i> Persone</a>
-                </div>                
+                </div>
                 {{-- <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a> --}}
+            </div>
+            <div class="mt-auto">
+                <p class="fs-6 ps-1">{{ config('app.name', 'VisionGate') }} ver. {{ config('visiongate.platform.version', 'VisionGate') }}</p>
+                <p class="fs-6 ps-1">{{ \Carbon\Carbon::now()->tz('Europe/Rome')->toDateTimeString() }}</p>
 
             </div>
         </div>
+        <!-- chiude sidebar -->
         <!-- Page content wrapper-->
         <div id="page-content-wrapper">
             <!-- Top navigation-->
