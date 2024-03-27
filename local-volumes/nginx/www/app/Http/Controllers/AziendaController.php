@@ -32,7 +32,7 @@ class AziendaController extends Controller
       $validatedData = $request->validated();
       $azienda = Azienda::first();
       $azienda->update($validatedData);
-      return redirect()->route('imposta.azienda.show')->with('success', 'Dati aggiornata con successo');
+      return redirect()->route('imposta.azienda.show')->with('success', 'Dati aggiornati');
    }
 
    // Mostra il form per modificare i documenti privacy specifica azienda
@@ -48,7 +48,7 @@ class AziendaController extends Controller
       $validatedData = $request->validated();
       $azienda = Azienda::first();
       $azienda->update($validatedData);
-      return redirect()->route('imposta.azienda.show')->with('success', 'Privacy aggiornata con successo');
+      return redirect()->route('imposta.azienda.show')->with('success', 'Privacy aggiornata');
    }
 
    public function update_logo(UpdateAziendaLogoRequest $request, $id)
@@ -61,7 +61,7 @@ class AziendaController extends Controller
 
          // Carica e assegna il nuovo file come media all'azienda
          $azienda->addMediaFromRequest('image')->toMediaCollection();
-         return redirect()->route('imposta.azienda.show')->with('success', 'Logo aggiornato con successo');
+         return redirect()->route('imposta.azienda.show')->with('success', 'Logo aggiornato');
       }
    }
 }

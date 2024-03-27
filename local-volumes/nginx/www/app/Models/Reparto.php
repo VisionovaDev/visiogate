@@ -24,4 +24,9 @@ class Reparto extends Model
     {
         return $this->sede->nome ?? 'N/D'; // Assumi che la colonna per il nome nella tabella sedi sia 'nome'
     }
+
+    public function persone()
+    {
+        return $this->hasMany(Persona::class, 'reparto_id');
+    }
 }

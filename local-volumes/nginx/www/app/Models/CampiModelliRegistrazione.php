@@ -20,8 +20,9 @@ class CampiModelliRegistrazione extends Model
         'label',
         'placeholder',
         'tipo',
-        'obbligatorio',
+        'is_obbligatorio',
         'posizione',
+        'is_abilitato',
     ];
 
     public function modelliRegistrazione()

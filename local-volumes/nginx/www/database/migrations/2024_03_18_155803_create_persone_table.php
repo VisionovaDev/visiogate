@@ -17,10 +17,11 @@ return new class extends Migration
             $table->string('nome');
             $table->string('cognome');
             $table->string('email');
-            $table->boolean('interno')->default(false);
+            $table->string('interno');
             $table->string('telefono')->nullable();
             $table->boolean('accetta_visite')->default(false);            
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

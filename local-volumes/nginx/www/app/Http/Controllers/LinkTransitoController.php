@@ -15,7 +15,7 @@ class LinkTransitoController  extends Controller
       Varco::findOrFail($varco_id);
       $data['varco_id']=$varco_id;
       LinkTransito::create($data);
-      return redirect()->route('imposta.varco.show', ['id' => $varco_id])->with('success', 'Link aggiunto con successo');
+      return redirect()->route('imposta.varco.show', ['id' => $varco_id])->with('success', 'Link aggiunto');
    }
 
    public function delete($id)
@@ -37,39 +37,5 @@ class LinkTransitoController  extends Controller
       return view('partials.htmx.linktransito_is_abilitato_toggle_checkbox', ['link' => $linkTransito]);
    }
 
-   
-   /*
-   public function store(UpdateVarcoRequest $request)
-   {      
-      $validatedData = $request->validated();      
-      $sede_id=$validatedData['sede_id'];
-      Varco::create($validatedData)  ;
-      return redirect()->route('imposta.sede.show',['id' => $sede_id])->with('success', 'Varco aggiunto con successo');
-   }
 
-  
-   public function edit($id)
-   {
-      $varco = Varco::findOrFail($id);
-      $sede=Sede::findOrFail( $varco->sede_id);
-      return view('imposta.varco_edit', ['varco' => $varco,'sede'=>$sede]);
-   }
-  
-   public function update(UpdateVarcoRequest $request,$id)
-   {      
-      $validatedData = $request->validated();   
-      $varco = Varco::findOrFail($id);
-      $varco->update($validatedData);
-      return redirect()->route('imposta.sede.show',['id'=>$varco->sede_id])->with('success', 'Varco aggiornato con successo');
-   }
-
-  
-   
-    // Mostra una specifica azienda
-    public function show($id)
-    {
-       $varco = Varco::findOrFail($id); 
-       return view('imposta.varco_show', ['varco'=> $varco]);
-    }
- */
 }

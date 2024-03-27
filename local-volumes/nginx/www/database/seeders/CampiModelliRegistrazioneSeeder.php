@@ -103,8 +103,8 @@ class CampiModelliRegistrazioneSeeder extends Seeder
                     'label' => $traduzioni_nome[$lingua],
                     'placeholder' => $traduzioni_nome[$lingua],
                     'tipo' => 'testo',
-                    'abilitato' => 1,
-                    'obbligatorio' => 1,
+                    'is_abilitato' => 1,
+                    'is_obbligatorio' => 1,
                     'posizione' => 1,                    
                 ]);
                 //cognome
@@ -115,8 +115,8 @@ class CampiModelliRegistrazioneSeeder extends Seeder
                     'label' => $traduzioni_cognome[$lingua],
                     'placeholder' => $traduzioni_cognome[$lingua],
                     'tipo' => 'testo',
-                    'abilitato' => 1,
-                    'obbligatorio' => 1,
+                    'is_abilitato' => 1,
+                    'is_obbligatorio' => 1,
                     'posizione' => 2,
                 ]);
 
@@ -128,8 +128,8 @@ class CampiModelliRegistrazioneSeeder extends Seeder
                     'label' => $traduzioni_azienda[$lingua],
                     'placeholder' => $traduzioni_azienda[$lingua],
                     'tipo' => 'testo',
-                    'abilitato' => 1,
-                    'obbligatorio' => 1,
+                    'is_abilitato' => 1,
+                    'is_obbligatorio' => 1,
                     'posizione' => 3,
                 ]);
 
@@ -141,8 +141,8 @@ class CampiModelliRegistrazioneSeeder extends Seeder
                     'label' => $traduzioni_email[$lingua],
                     'placeholder' => $traduzioni_email[$lingua],
                     'tipo' => 'email',
-                    'abilitato' => 1,
-                    'obbligatorio' => 0,
+                    'is_abilitato' => 1,
+                    'is_obbligatorio' => 0,
                     'posizione' => 4,
                 ]);
 
@@ -154,8 +154,8 @@ class CampiModelliRegistrazioneSeeder extends Seeder
                     'label' => $traduzioni_telefono[$lingua],
                     'placeholder' => $traduzioni_telefono[$lingua],
                     'tipo' => 'testo',
-                    'abilitato' => 1,
-                    'obbligatorio' => 0,                    
+                    'is_abilitato' => 1,
+                    'is_obbligatorio' => 0,                    
                     'posizione' => 5,
                 ]);
 
@@ -167,8 +167,8 @@ class CampiModelliRegistrazioneSeeder extends Seeder
                     'label' => $traduzioni_reparto[$lingua],
                     'placeholder' => $traduzioni_reparto[$lingua],
                     'tipo' => 'select_reparto',
-                    'abilitato' => 1,
-                    'obbligatorio' => 1,
+                    'is_abilitato' => 1,
+                    'is_obbligatorio' => 1,
                     'posizione' => 6,
                 ]);
 
@@ -180,8 +180,8 @@ class CampiModelliRegistrazioneSeeder extends Seeder
                     'label' => $traduzioni_persona[$lingua],
                     'placeholder' => $traduzioni_persona[$lingua],
                     'tipo' => 'select_persona',
-                    'abilitato' => 1,
-                    'obbligatorio' => 1,
+                    'is_abilitato' => 1,
+                    'is_obbligatorio' => 1,
                     'posizione' => 6,
                 ]);
 
@@ -193,8 +193,8 @@ class CampiModelliRegistrazioneSeeder extends Seeder
                     'label' => $traduzioni_privacy[$lingua],
                     'placeholder' => $traduzioni_privacy[$lingua],
                     'tipo' => 'checkbox_privacy',
-                    'abilitato' => 1,
-                    'obbligatorio' => 1,
+                    'is_abilitato' => 1,
+                    'is_obbligatorio' => 1,
                     'posizione' => 7,
                 ]);
 
@@ -206,8 +206,8 @@ class CampiModelliRegistrazioneSeeder extends Seeder
                     'label' => $traduzioni_regolamento[$lingua],
                     'placeholder' => $traduzioni_regolamento[$lingua],
                     'tipo' => 'checkbox_regolamento',
-                    'abilitato' => 0,
-                    'obbligatorio' => 1,
+                    'is_abilitato' => 0,
+                    'is_obbligatorio' => 1,
                     'posizione' => 8,
                 ]);
                 

@@ -13,7 +13,11 @@ use App\Http\Requests\UpdateAziendaPrivacyRequest;
 class SedeController  extends Controller
 {
 
-   // Mostra il form per modificare una specifica azienda
+   public function list (){
+      $sedi=Sede::all();
+      return view('imposta.sede_list',['sedi'=>$sedi]);
+    }
+
    public function edit($id)
    {
       $sede = Sede::findOrFail($id);
@@ -29,8 +33,9 @@ class SedeController  extends Controller
    public function store(UpdateSedeRequest $request)
    {      
       $validatedData = $request->validated();  
-      Sede::create($validatedData)  ;
-      return redirect()->route('imposta.azienda.show')->with('success', 'Sede aggiunta con successo');
+      $sede=Sede::create($validatedData)  ;
+      //return redirect()->route('imposta.azienda.show')->with('success', 'Sede aggiunta');
+      return redirect()->route('imposta.sede.show',$sede->id)->with('success', 'Sede aggiornata');
    }
 
 
@@ -39,14 +44,14 @@ class SedeController  extends Controller
       $validatedData = $request->validated();   
       $sede = Sede::findOrFail($id); 
       $sede->update($validatedData);
-      return redirect()->route('imposta.sede.show',$id)->with('success', 'Sede agiornata con successo');
+      return redirect()->route('imposta.sede.show',$id)->with('success', 'Sede aggiornata');
    }
 
    public function delete($id)
    {      
       $sede = Sede::findOrFail($id); 
       $sede->delete();
-      return redirect()->route('imposta.azienda.show')->with('success', 'Sede aggiunta con successo');
+      return redirect()->route('imposta.sede.list')->with('success', 'Sede cancellata');
    }
 
    

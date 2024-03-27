@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('label');
             $table->string('placeholder')->nullable();
             $table->enum('tipo', ['testo', 'checkbox', 'email','url','numero','select_reparto','select_persona','checkbox_privacy','checkbox_regolamento']);
-            $table->boolean('obbligatorio');
+            $table->boolean('is_obbligatorio');
             $table->integer('posizione');
-            $table->boolean('abilitato');
+            $table->boolean('is_abilitato');
             $table->softDeletes();
             $table->timestamps();
         });

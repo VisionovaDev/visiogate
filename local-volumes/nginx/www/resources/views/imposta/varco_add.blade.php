@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container">
-        <h3 class="fw-bold mb-3">Aggiungi varco</h3>
+        <h3 class="fw-bold mb-3 mt-3">Aggiungi varco</h3>
         <form action="{{ route('imposta.varco.store') }}" method="POST">
             @csrf
             @method('POST')
@@ -42,7 +42,7 @@
             
             <div class="mt-3">
                 <button type="submit" class="btn btn-primary">Salva</button>
-                <a href="{{--  route('imposta.varco.show') --}}">
+                <a href="{{ route('imposta.sede.show',  $sede->id ) }}">
                     <button type="button" class="btn btn-secondary">Annulla</button>
                 </a>
             </div>

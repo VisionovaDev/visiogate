@@ -25,7 +25,7 @@ class VarcoController  extends Controller
       $validatedData = $request->validated();      
       $sede_id=$validatedData['sede_id'];
       Varco::create($validatedData)  ;
-      return redirect()->route('imposta.sede.show',['id' => $sede_id])->with('success', 'Varco aggiunto con successo');
+      return redirect()->route('imposta.sede.show',['id' => $sede_id])->with('success', 'Varco aggiunto');
    }
 
   
@@ -41,14 +41,14 @@ class VarcoController  extends Controller
       $validatedData = $request->validated();   
       $varco = Varco::findOrFail($id);
       $varco->update($validatedData);
-      return redirect()->route('imposta.sede.show',['id'=>$varco->sede_id])->with('success', 'Varco aggiornato con successo');
+      return redirect()->route('imposta.sede.show',['id'=>$varco->sede_id])->with('success', 'Varco aggiornato');
    }
 
    public function delete($id)
    {      
       $varco = Varco::findOrFail($id); 
       $varco->delete();
-      return redirect()->route('imposta.sede.show')->with('success', 'Varco rimosso');
+      return redirect()->route('imposta.sede.show')->with('success', 'Varco cancellato');
    }
 
    
